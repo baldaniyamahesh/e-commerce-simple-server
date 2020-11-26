@@ -30,6 +30,10 @@ mongoose.connect(dbconfig.url,{useCreateIndex: true, useNewUrlParser: true,useUn
 // app.get('/', (req, res) => res.send('Hello World!'))
 let user = require('./modules/users/routers');
 let auth=require('./modules/auth/routers');
+let product=require('./modules/products/routers');
+let order=require('./modules/order/router')
+let cart=require('./modules/cart/router')
+// const router = require('./modules/products/routers');
 
-app.use('/e-comerce', auth,user);
+app.use('/e-comerce', auth,user,product,order,cart);
 app.listen(port, () => console.log(`Example app listening on port port!`));
