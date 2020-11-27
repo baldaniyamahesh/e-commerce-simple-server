@@ -2,7 +2,7 @@ const { reject, result } = require('lodash')
 const usermodel=require('./../auth/model/auth')
 
 
-let gateway = brainTree.connect({environment: brainTree.Environment.Sandbox, publicKey: process.env.BRAINTREE_PUBLIC_KEY, privateKey: process.env.BRAINTREE_PRIVATE_KEY, merchantId: process.env.BRAINTREE_MERCHANT_ID});
+// let gateway = brainTree.connect({environment: brainTree.Environment.Sandbox, publicKey: process.env.BRAINTREE_PUBLIC_KEY, privateKey: process.env.BRAINTREE_PRIVATE_KEY, merchantId: process.env.BRAINTREE_MERCHANT_ID});
 
 
 const paymentServices={}
@@ -13,16 +13,16 @@ const paymentServices={}
    .then((result)=>{
 
    
-    gateway
-    .clientToken
-    .generate({}, function (err, response) {
-        if (err) {
-             reject(err)
-        } else {
-            resolve(response);
-            // return res.json(response);
-        }
-    })
+    // gateway
+    // .clientToken
+    // .generate({}, function (err, response) {
+    //     if (err) {
+    //          reject(err)
+    //     } else {
+    //         resolve(response);
+    //         // return res.json(response);
+    //     }
+    // })
 })
 ///////////////////////////////////////////
 .catch((err)=>{
