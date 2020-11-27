@@ -6,6 +6,7 @@ const cartcontroll={}
 
 
 cartcontroll.cartservices=(req,res)=>{
+    // console.log("check response",req.body.item);
     cartservices.addtocart(req)
     .then((result)=>{
         return res.send(result)
@@ -24,6 +25,16 @@ cartcontroll.cartlist=(req,res)=>{
     })
     .catch((err)=>{
         return res.send(err);
+    })
+}
+
+cartcontroll.clearusercart=(req,res)=>{
+    cartservices.usercartclear(req)
+    .then((result)=>{
+        return res.send(result)
+    })
+    .catch((err)=>{
+        return res.send(err)
     })
 }
 module.exports=cartcontroll;
