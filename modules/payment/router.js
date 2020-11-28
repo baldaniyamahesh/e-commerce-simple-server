@@ -5,6 +5,6 @@ const paymentServices = require('./paymentServices');
 
 const router=express.Router();
 
-router.get('/payment/gettoken/:userId',paymentServices.getclientoken);
+router.get('/payment/gettoken/',paymentServices.getclientoken);
 
 module.exports=router;
